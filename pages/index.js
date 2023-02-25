@@ -6,7 +6,7 @@ import Property from '@/components/Property';
 export default function Home({ propertyForSale }) {
   console.log(propertyForSale);
   return (
-    <div className="flex flex-wrap">
+    <div className="flex flex-wrap justify-center">
       {
         propertyForSale.map((property) => <Property property={property} key={property.id} />)
       }
