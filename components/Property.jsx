@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-const Property = ({ property: { coverPhoto, price, rooms, area, title, agency, externalId } }) => {
+const Property = ({ property: { coverPhoto, price, rooms, area, title, agency, externalID } }) => {
    console.log(coverPhoto.url);
    return (
       <div className="md:max-w-xs w-full rounded-lg overflow-hidden shadow-lg m-4">
-         <Link href={`/property/${externalId}`} passHref>
+         <Link href={`/property/${externalID}`} passHref>
             <img src={coverPhoto.url} className="h-60 w-full" alt={title} loading={'lazy'} />
             <div className="px-6 py-4">
                <h2 className="text-lg font-bold">
