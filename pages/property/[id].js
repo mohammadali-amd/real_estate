@@ -1,9 +1,10 @@
+import Image from 'next/image';
 import { baseUrl, fetchApi } from '../../utils/fetchApi';
 
 const PropertyDetails = ({propertyDetails: { price, rentFrequency, rooms, title, baths, area, agency, isVerified, description, purpose, amenities, photos, coverPhoto }}) => (
    <div className='grid grid-cols-2 mx-32 py-12'>
       <div className='flex items-start justify-center'>
-         <img src={coverPhoto.url} className="w-4/5" alt={title} loading={'lazy'} />
+         <Image src={coverPhoto.url} className="w-4/5" alt={title} loading={'lazy'} width={1000} height={1000} />
       </div>
       <div className="px-6 pb-4">
          <h2 className="text-2xl font-bold">
