@@ -8,20 +8,23 @@ export default function Home({ propertyForSale }) {
   // console.log(propertyForSale);
   
   return (
-    <>
-      <SearchFilters />
+    <div className='grid md:grid-cols-4'>
       
-      <div className='flex flex-wrap justify-center'>
+      <div className='flex flex-wrap justify-center mx-6 md:col-span-3'>
       {propertyForSale.map((property) => <Property property={property} key={property.id} />)}
       </div>
 
       {propertyForSale.length === 0 && (
         <div className="flex">
-            <img src="" />
+            <Image src="" alt="not-found" />
             <h4>No Result Found.</h4>
         </div>
       )}
-    </>
+
+      <div className='md:col-span-1 hidden md:block mt-4'>
+        <SearchFilters />
+      </div>
+    </div>
   );
 };
 
