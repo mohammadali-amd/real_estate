@@ -8,9 +8,9 @@ export default function Home({ propertyForSale }) {
   // console.log(propertyForSale);
   
   return (
-    <div className='grid md:grid-cols-4'>
+    <div className='grid md:grid-cols-4 mx-12 gap-6'>
       
-      <div className='flex flex-wrap justify-center mx-6 md:col-span-3'>
+      <div className='flex flex-wrap justify-center md:col-span-3'>
       {propertyForSale.map((property) => <Property property={property} key={property.id} />)}
       </div>
 
