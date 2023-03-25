@@ -1,17 +1,34 @@
-import Link from 'next/link';
 import Image from 'next/image';
+import { useState } from 'react';
 import { baseUrl, fetchApi } from '../utils/fetchApi';
 import Property from '@/components/Property';
 import SearchFilters from '@/components/SearchFilters';
 
 export default function Home({ propertyForSale }) {
-  // console.log(propertyForSale);
   
+  const imagePerRow = 9;
+  const [next, setNext] = useState(imagePerRow);
+
+  const handleMoreImage = () => {
+    setNext(next + imagePerRow);
+  };
+
   return (
     <div className='grid md:grid-cols-4 mx-12 gap-6'>
       
       <div className='flex flex-wrap justify-center md:col-span-3'>
-      {propertyForSale.map((property) => <Property property={property} key={property.id} />)}
+      {propertyForSale?.slice(0, next)?.map((property) => <Property property={property} key={property.id} />)}
+
+      <div className="flex w-full justify-center my-10">
+        {next < propertyForSale?.length && (
+            <button
+              className="rounded-md bg-teal-500 py-2 px-3 text-sm font-semibold  text-white hover:bg-teal-600 duration-200"
+              onClick={handleMoreImage}
+            >
+              Load more
+            </button>
+          )}
+      </div>
       </div>
 
       {propertyForSale.length === 0 && (

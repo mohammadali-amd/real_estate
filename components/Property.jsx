@@ -2,7 +2,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const Property = ({ property: { coverPhoto, price, rooms, area, title, agency, externalID } }) => {
-   console.log(coverPhoto.url);
    return (
       <div className="md:max-w-xs w-full rounded-lg overflow-hidden shadow-md hover:shadow-xl duration-300 m-4">
          <Link href={`/property/${externalID}`} passHref>

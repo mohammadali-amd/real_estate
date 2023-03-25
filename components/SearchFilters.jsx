@@ -48,7 +48,7 @@ const SearchFilters = () => {
                   >
                      {filter?.items?.map((item)=>(
                         <option key={item.value} value={item.value}>
-                           {item.name} &#xf044;
+                           {item.name}
                         </option>
                      ))}
                   </select>
